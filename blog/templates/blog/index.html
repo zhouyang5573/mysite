@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+form textarea.hello { width:1000px; height:350px;border:1px solid green;font-size: 30px;}
+
+form input.submit {font-size: 20px;background: aquamarine}
+
+</style>
+
+</head>
+<body>
+<form action="../../blog/encode/" method="post">
+  {% csrf_token %}
+  <textarea class="hello" type="text" name="hello" placeholder="please input json data"></textarea>
+
+  <input class= "submit" type="submit" value="提交"  width=30/>
+</form>
+<p>{{ tip }}</p>
+<textarea rows="25" cols="164" id = "text">
+                            {{ jsondata }}
+</textarea>
+<button onclick="myCopy()" style="background: aquamarine ;font-size: 20px">点击复制</button><br>
+<script>
+function myCopy(){
+var ele = document.getElementById("text");
+ele.select();
+document.execCommand("Copy");
+alert("复制成功");
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+

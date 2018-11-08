@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+form textarea{ width:500px; height:700px;border:1px solid green;font-size: 15px;}
+
+form input.submit {font-size: 20px;background: aquamarine}
+
+p.err{color: red}
+</style>
+</head>
+<body>
+<form action="../../blog/jsonschema/" method="post">{% csrf_token %}
+  <textarea id="jsoninput" class="hello" type="text" name="jsondata" placeholder="please input json data" >{{ jsondata }}</textarea>
+    <textarea class="hello2" type="text" name="schema" placeholder="please input json jsonschema">{{ schema }}</textarea>
+  <input class= "submit" type="submit" value="提交"  width=30/>
+</form>
+<p class="err">{{ schematip }} {{ datatip }} {{ result }}</p>
+
+</body>
+</html>
